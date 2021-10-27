@@ -6,11 +6,24 @@
     "build": "vite build",
     "serve": "vite preview",
     "lint": "eslint --ignore-path .eslintignore --ext .js,.vue src",
-    "lint-fix": "eslint --ignore-path .eslintignore --ext .js,.vue src --fix"
+    "lint-fix": "eslint --ignore-path .eslintignore --ext .js,.vue src --fix",
+    "prepare": "husky install"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*{.js,.vue}": [
+      "eslint --ignore-path .eslintignore --ext .js,.vue src"
+    ]
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
+    "husky": "^4.3.8",
     "less": "^4.1.2",
+    "lint-staged": "^11.2.6",
     "sass": "^1.43.2",
     "vite": "^2.6.4"
   },

@@ -7,7 +7,6 @@
     "serve": "vite preview",
     "lint": "eslint --ignore-path .eslintignore --ext .js,.vue src",
     "lint-fix": "eslint --ignore-path .eslintignore --ext .js,.vue src --fix",
-    "prepare": "husky install",
     "commit": "cz"
   },
   "config": {
@@ -42,7 +41,7 @@
     "@vue/composition-api": "^1.2.4",
     "autoprefixer": "^10.3.7",
     "color-alpha": "^1.1.3",
-    "echarts": "^4.9.0",
+    "echarts": "5.2.1",
     "eslint": "^7.22.0",
     "eslint-config-standard": "^16.0.2",
     "eslint-friendly-formatter": "^4.0.1",

@@ -1,0 +1,954 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{margin:0;padding:0;box-sizing: content-box}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section { display:block; }
+table{border-collapse:collapse;border-spacing:0}
+audio,canvas,video { display: inline-block;*display: inline;*zoom: 1;}
+fieldset,img{border:0}
+address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal}
+ol,ul{list-style:none}
+caption,th{text-align:left}
+q:before,q:after{content:''}
+abbr,acronym{border:0;font-variant:normal}
+sup{vertical-align:text-top}
+sub{vertical-align:text-bottom}
+input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit}
+input,textarea,select{*font-size:100%}
+html{
+  overflow: -moz-scrollbars-vertical;
+}
+html,body{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+i {
+  font-style: normal;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+img{
+  border: none;
+  vertical-align: middle;
+  cursor: pointer;
+}
+button{
+  border: none;
+}
+.icon {
+  width: 12px;
+  height: 12px;
+  line-height: 12px;
+  vertical-align: 0;
+  font-size: 12px;
+  fill: currentColor;
+  overflow: hidden;
+}
+
+.icon {
+  /* 通过设置 font-size 来改变图标大小 */
+  width: 1em; height: 1em;
+  /* 图标和文字相邻时，垂直对齐 */
+  vertical-align: -0.15em;
+  /* 通过设置 color 来改变 SVG 的颜色/fill */
+  fill: currentColor;
+  /* path 和 stroke 溢出 viewBox 部分在 IE 下会显示
+     normalize.css 中也包含这行 */
+  overflow: hidden;
+}
+
+// 单词换行
+.break{
+  word-break: break-all;
+  overflow-wrap: break-word;
+}
+
+// 恢复ul,ol默认样式
+.recover-list{
+  ul{
+    list-style-type: disc;
+    padding-inline-start: 40px;
+  }
+  ol{
+    list-style-type: decimal;
+    padding-inline-start: 40px;
+  }
+}
+
+// @import "./transition-for-task-detail.less";
+
+// -------------公用pc适配盒模型样式------
+.box{
+  width: 1700px;
+  margin: 0 auto;
+  overflow-x: auto;
+}
+@media screen and (max-width: 1790px) {
+  .box{
+    width: 1500px;
+  }
+}
+@media screen and (max-width: 1550px) {
+  .box{
+    width: 1266px;
+  }
+}
+// @media screen and (max-width: 1350px) {
+//   .box{
+//     width: 990px;
+//   }
+// }
+
+// 公用间距
+.margin-space-top{
+  margin-top: 20px;
+}
+.margin-space-bottom{
+  margin-bottom: 20px;
+}
+.margin-space-right{
+  margin-right: 20px;
+}
+.margin-space-left{
+  margin-left: 20px;
+}
+.padding-space{
+  padding: 20px;
+}
+@media screen and (max-width: 1440px) {
+  .margin-space-top{
+    margin-top: 14px;
+  }
+  .margin-space-bottom{
+    margin-bottom: 14px;
+  }
+  .margin-space-right{
+    margin-right: 14px;
+  }
+  .margin-space-left{
+    margin-left: 14px;
+  }
+  .padding-space{
+    padding: 14px;
+  }
+}
+@media screen and (min-width:1441px) and (max-width: 1680px) {
+  .margin-space-top{
+    margin-top: 16px;
+  }
+  .margin-space-bottom{
+    margin-bottom: 16px;
+  }
+  .margin-space-right{
+    margin-right: 16px;
+  }
+  .margin-space-left{
+    margin-left: 16px;
+  }
+  .padding-space{
+    padding: 16px;
+  }
+}
+@media screen and (min-width:1681px) and (max-width: 1920px) {
+  .margin-space-top{
+    margin-top: 18px;
+  }
+  .margin-space-bottom{
+    margin-bottom: 18px;
+  }
+  .margin-space-right{
+    margin-right: 18px;
+  }
+  .margin-space-left{
+    margin-left: 18px;
+  }
+  .padding-space{
+    padding: 18px;
+  }
+}
+
+.min-box{
+  min-height: 540px;
+}
+
+// 二级导航栏下内容页公用盒模型样式
+.second-nav-content{
+  min-height: 540px;
+}
+
+// -------------滚动条样式---------------
+p,div,ul,li {
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 10px;
+  }
+}
+
+p,div,ul,li {
+  &::-webkit-scrollbar-track {
+    background-color: rgb(255, 255, 255);
+    border-radius: 4px;
+  }
+}
+
+p,div,ul,li {
+  &::-webkit-scrollbar-thumb {
+    background-color: rgb(233,233,233);
+    border-radius: 4px;
+  }
+}
+
+p,div,ul,li {
+  &::-webkit-scrollbar-button {
+    background-color: rgb(233,233,233);
+    display: none;
+  }
+}
+
+// 背景色类
+
+// 导航栏颜色
+.nav-bg{
+  background: #001529;
+}
+
+// 主页背景颜色
+.home-bg{
+  background: #f0f2f5;
+}
+
+// 块背景色
+.article-bg{
+  background: #fff;
+}
+
+// 主色调
+.main-bg{
+  background: #1890ff;
+}
+
+// 文字类规范类
+
+// 页面标题
+.main-head-font{
+  color: rgba(0,0,0,.85);
+  font-size: 18px;
+  font-weight: bolder;
+}
+
+// 页面小标题
+.sub-head-font{
+  color: rgba(0,0,0,.85);
+  font-size: 16px;
+  font-weight: bold;
+}
+
+// 强调文字
+.sma-head-font{
+  color: rgba(0,0,0,.65);
+  font-size: 14px;
+  font-weight: bold;
+}
+
+// 正文文字
+.normal-font{
+  color: rgba(0,0,0,.65);
+  font-size: 14px;
+}
+
+// 必填字段 * 提示
+.required-tip{
+  color: #f00;
+  font-size: 18px;
+  padding-top: 3px;
+  margin-left:8px;
+  height: 32px;
+  box-sizing: border-box;
+}
+
+.required-font{
+  color: #f00;
+  font-size: 18px;
+  display: inline-block;
+  vertical-align: middle;
+  padding-top: 2px;
+  margin-left: 8px;
+  height: 32px;
+  box-sizing: border-box;
+}
+// 16号字不加粗
+.title-16-font {
+  color: #000;
+  font-size: 16px;
+  font-weight: normal;
+}
+// 辅助文字
+.title-font{
+  color: rgba(0,0,0,.85);
+  font-size: 14px;
+  font-weight: bold;
+}
+.help-font{
+  color: rgba(0,0,0,.45);
+  font-size: 14px;
+}
+
+// 失效文字
+.disabled-font{
+  color: rgba(0,0,0,.25);
+  font-size: 14px;
+}
+
+// 空白页提示文字
+.empty-text{
+  font-size: 18px;
+  color: rgba(0,0,0,.65);
+  .link-text{
+    font-size: 18px;
+    text-decoration: underline;
+  }
+}
+
+//小竖线颜色
+.line-color{
+  color: rgba(0,0,0,.15);
+  margin: 0px 3px;
+}
+
+// 图表类名
+.echarts{
+  width: 100%;
+  height: 100%;
+}
+
+// 公用模块样式
+.article-div{
+  box-sizing: border-box;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid rgb(233,233,233);
+}
+
+// 二级导航栏样式
+.second-nav{
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 20px;
+  background: #fff;
+  justify-content: space-between;
+  .second-nav-item{
+    padding: 0 10px;
+  }
+}
+
+// 文字类跳转链接样式
+.link-text{
+  font-size: 14px;
+  color: #1890FF;
+  font-weight: 400;
+  cursor: pointer;
+}
+.link-text-jl{
+  color: #ffa96d;
+  &.step-8 {
+    background-color: #fff;
+    padding: 4px 6px;
+    margin-left: -6px;
+  }
+}
+.emit-color{
+  color: #1890FF;
+  cursor: pointer;
+}
+.close-color{
+  color: #f5222d;
+  cursor: pointer;
+}
+
+// 无margin
+.no-margin{
+  margin: 0px !important;
+}
+
+// 无padding
+.no-padding{
+  padding: 0px !important;
+}
+
+// 手掌鼠标样式
+.pointer{
+  cursor: pointer;
+}
+
+// 省略号样式
+.abbreviation-text{
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
+// 公用home样式
+.home{
+  width: 100%;
+  height: 100%;
+  background: #f0f2f5;
+  overflow-y: auto;
+  .home-head{
+    width: 100%;
+    height: 70px;
+    text-align: center;
+  }
+  .home-main{
+    width: 100%;
+    min-height: calc(~'100% - 70px');
+    text-align: center;
+  }
+  .home-full-main {
+    height: calc(~'100% - 70px');
+    .home-box-main {
+      height: 100%;
+      box-sizing: border-box;
+      .exam{
+        height: 100%;
+        .registration-box{
+          height: 100%;
+          overflow: hidden;
+        }
+      }
+    }
+  }
+  .home-box-head{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    background: #001529;
+    color: #9e9e9e;
+    overflow: hidden;
+    .home-head-logo{
+      min-width: 80px;
+      max-width: 80px;
+      height: auto;
+      margin-right: 40px;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    .home-nav{
+      max-width: 760px;
+      min-width: 410px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      .home-nav-item{
+        width: 100px;
+        font-size: 14px;
+        line-height: 70px;
+        cursor: pointer;
+        &.active{
+          background: rgba(232,244,255,.3);
+          color: #F7F7F7;
+          font-size: 16px;
+        }
+      }
+    }
+    .home-menu{
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      .home-message-btn{
+        width: 40px;
+        height: 70px;
+        line-height: 70px;
+        text-align: center;
+        cursor: pointer;
+        margin-right: 50px;
+        .badge{
+          width: 100%;
+          height: 100%;
+          .el-badge__content{
+            top: 18px;
+            border: none;
+            background: #da1026;
+          }
+        }
+        svg{
+          width: 20px;
+          height: 20px;
+        }
+        i{
+          font-size: 22px;
+        }
+
+        &.active{
+          // background: rgba(232,244,255,.3);
+          i{
+            font-size: 24px;
+            color: #1890ff;
+          }
+          svg{
+            width: 22px;
+            height: 22px;
+          }
+        }
+      }
+      .home-menu-title{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        height: 47px;
+        cursor: pointer;
+      }
+      .user-img{
+        width: 40px;
+        height: 40px;
+        img {
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+        }
+      }
+      .user-name {
+        font-size: 14px;
+        padding: 0 10px;
+      }
+      .home-add-dropdown{
+        height: 46px;
+      }
+      .add-menu-title{
+        height: 70px;
+        line-height: 70px;
+        width: 150px;
+        background: #1890ff;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+        margin-top: -12px;
+      }
+    }
+  }
+  .home-box-main{
+    padding: 24px 0;
+    min-height: calc(~'100% - 210px');
+  }
+}
+.white-bg{
+  background: #fff;
+}
+// 页面块样式
+.article{
+  background: #fff;
+  border: 1px solid rgb(233,233,233);
+  border-radius: 2px;
+  .article-head{
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 2px;
+    padding:0 20px;
+    height: 56px;
+    line-height: 56px;
+    text-align: left;
+    border-bottom: 1px solid rgb(235,235,235);
+  }
+  .article-content{
+    border-radius: 2px;
+  }
+}
+
+//超出长度省略号替代
+.ofe{
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+
+//flex 水平
+.fr{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+//flex 垂直
+.fl{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.f1{
+  flex: 1;
+}
+
+// 公共flex
+.is-flex{
+  display: flex;
+  align-items: center;
+}
+.flex-warp{
+  flex-wrap: wrap;
+}
+.top-flex{
+  align-items: flex-start;
+}
+.between-flex{
+  justify-content: space-between;
+}
+// 树状分割线
+.fenge-shu{
+  width: 1px;
+  height: 70%;
+  margin: 0 20px;
+  background: rgb(233,233,233);
+}
+
+// 公用自定义表单弹框样式
+.popup{
+  position: fixed;
+  z-index: 2001;
+  width: 100%;
+  height: 100%;
+  top:0;
+  left: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  .popup-main{
+    height: auto;
+    text-align: center;
+    border-radius: 6px;
+    background: #fff;
+    min-width: 450px;
+    header{
+      position: relative;
+      height: 45px;
+      line-height: 45px;
+      color: rgba(0,0,0,.85);
+      font-size: 16px;
+      font-weight: bold;
+      border-top-left-radius: 6px;
+      border-top-right-radius: 6px;
+      text-align: left;
+      border-bottom: 1px solid rgb(233,233,233);
+      padding-left: 35px;
+      .close{
+        position: absolute;
+        cursor: pointer;
+        font-weight: 500;
+        width: 60px;
+        text-align: center;
+        height: 45px;
+        line-height: 45px;
+        top:0;
+        right: 0;
+        font-size: 20px;
+        color: #909399;
+      }
+    }
+    .popup-content{
+      box-sizing: border-box;
+      padding: 35px;
+      border-bottom-left-radius: 6px;
+      border-bottom-right-radius: 6px;
+      .btns{
+        margin-top: 20px;
+      }
+    }
+  }
+}
+
+// 需要记录分页样式
+.need-txt-pagination{
+  margin-top: 20px;
+  justify-content: space-between
+}
+
+// 学习,考试空白页样式
+.empty-table, .learn, .exam .learn-right, .skill .skill-right{
+  .el-table__empty-block{
+    margin-top: 55px !important;
+    min-height: 100px !important;
+    .el-table__empty-text{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .empty-document-icon{
+        width: 90px;
+        height: 100px;
+        margin-right: 40px;
+      }
+    }
+  }
+}
+
+//考试空白样式中阿里矢量图位置调整
+.exam-empty-text{
+  .el-table__empty-text{
+    top: 30%;
+  }
+}
+
+// 文件图片样式
+.document-table{
+  .file-icon{
+    width: 20px;
+    height: 24px;
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+// 学习模块视频与课程公用列表页卡片样式
+.learn-card-main{
+  margin-left: -12px;
+  min-height: 475px;
+  display: flex;
+  flex-wrap: wrap;
+  // justify-content: space-between;
+  .learn-card{
+    width: 33%;
+    // max-width: 287px;
+    padding-left: 12px;
+    padding-bottom: 12px;
+    box-sizing: border-box;
+    @media screen and (min-width: 1550px) {
+      width: 25%;
+    }
+    &:last-child{
+      margin-right: 0;
+    }
+    .card-img{
+      width: 100%;
+      // height: 198px;
+      // line-height: 198px;
+      position: relative;
+      cursor: pointer;
+      img{
+        vertical-align: top;
+      }
+    }
+    .card-text{
+      padding: 10px;
+      text-align: left;
+      .card-title{
+        line-height: 30px;
+      }
+      .card-time{
+        flex: 1;
+        margin-right: 10px;
+        &::before{
+          font-size: 16px;
+        }
+      }
+      .card-btns{
+        width: 130px;
+        text-align: right;
+        span{
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}
+
+// 公用学习模块空白页样式
+.empty-main{
+  margin-top: 40px;
+  justify-content: center;
+  .empty-icon{
+    width: 100px;
+    height: 100px;
+    margin-right: 40px;
+  }
+}
+
+// 公用fix底部按钮组样式
+.fixed-btns{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  text-align: right;
+  z-index: 2;
+}
+
+// 填空题答案共用样式
+.tian-answer{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  &+.tian-answer{
+    margin-top: 5px;
+  }
+  .tian-index{
+    margin-right: 5px;
+  }
+  .tian-content{
+    flex: 1;
+    white-space: normal;
+  }
+}
+
+.huan-hang{
+  word-break: break-all;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+// 用于滚动悬浮固定
+.globalLayout-scrollFixedTopWrap {
+  height: 60px;
+  width: 100%;
+}
+
+.globalLayout-scrollFixedTop {
+  box-sizing: border-box;
+  height: 60px;
+  width: 100%;
+  // 2001是为了超出部分element Loading的z-index在上层显示
+  z-index: 2001;
+  border-bottom: 1px solid #ebebeb;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+// tag样式
+.staff-tag{
+  position: relative;
+  &.close-tag{
+    padding-right: 26px;
+  }
+  .el-tag__close{
+    position: absolute;
+    right: 5px;
+    top: 4px;
+  }
+}
+
+// 课程卡片悬浮显示
+.course-popover{
+  box-shadow:0px 1px 12px rgba(0,0,0,0.16);
+}
+.course-popover-content{
+  padding: 12px 16px;
+  .title{
+    line-height:30px;
+    color:rgba(0,0,0,0.85);
+    letter-spacing: 2px;
+    font-size:18px;
+  }
+  .centent{
+    height: 165px;
+  }
+  .info-list{
+    font-size: 12px;
+    color: #333333;
+    margin-top: 16px;
+    line-height: 17px;
+    height: 17px;
+    i{
+      font-size: 14px;
+      margin-right: 10px;
+    }
+    &.blue{
+      color: #1890ff;
+    }
+    &.progress-list{
+      display: flex;
+      align-items: center;
+      .text{
+        color:rgba(0,0,0,0.85);
+        font-size: 12px;
+        padding-left: 10px;
+      }
+    }
+  }
+  .bottom-info{
+    // margin-top: 70px;
+    border-top: 1px solid #D9D9D9;
+    padding-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    .list-item{
+      // flex: 1;
+      font-size: 12px;
+      line-height: 17px;
+      align-items: center;
+      text-align: center;
+      .name{
+        color: #999999;
+      }
+      .num{
+        color:rgba(0,0,0,0.85);
+        margin-top: 8px;
+      }
+    }
+  }
+}
+
+.noOutline{
+  &:focus{
+    outline: none;
+  }
+}
+
+.obs-download-modal{
+  .download-title{
+    margin: 0;
+    color: #000000;
+    font-size: 16px;
+    font-weight: 500;
+    .sub-title{
+      color: #CCCCCC;
+      font-size: 12px;
+      .iconfont{
+        margin: 0 8px;
+      }
+    }
+  }
+  .download-content{
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 0 44px;
+    .list-item{
+      width: 120px;
+      text-align: center;
+      height: 36px;
+      line-height: 36px;
+      border:1px solid rgba(0,0,0,0.14901960784313725);
+      border-radius:2px;
+      font-size: 14px;
+      color:rgba(0,0,0,0.65);
+      &:hover{
+        cursor: pointer;
+        color: #1890ff;
+        border-color: #1890FF;
+      }
+    }
+  }
+}
+
+ /* 解决Firefox下tag标签固定最大宽度下超出内容出现省略号时的
+ 关闭按钮消失问题 无关闭按钮情况下无需使用该样式 */
+.my-close-tag{
+  padding-right: 26px;
+  position: relative;
+  .el-tag__close {
+    position: absolute;
+    right: 5px;
+    top: 3px;
+  }
+}

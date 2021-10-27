@@ -6,9 +6,12 @@ import dataV from '@/components/Datav'
 import '@/assets/css/common.less'
 import VueEcharts from '@/utils/use_vueEcharts'
 import * as echarts from 'echarts'
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
 Vue.prototype.$echarts = echarts
 Vue.use(dataV)
 Vue.use(VueEcharts)
+Vue.use(ElementUI)
 Vue.config.productionTip = false
 
 // 全局注册

@@ -4,10 +4,7 @@
   </div>
 </template>
 
-<style lang="scss" scoped>
-*{
-  margin: 0;
-}
+<style lang="less" scoped>
 #app {
   width: 100%;
   height: 100%;

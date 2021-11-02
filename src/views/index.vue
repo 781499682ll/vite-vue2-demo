@@ -331,7 +331,7 @@ export default {
   },
   computed: {},
   created () {
-    // let a = 123
+    this.getUser()
   },
   mounted () {
     this.$nextTick(() => {
@@ -340,6 +340,13 @@ export default {
     })
   },
   methods: {
+    getUser () {
+      this.$axios.getUsers()
+        .then((res) => {
+          console.log(res)
+        })
+        .catch(() => {})
+    },
     initMap () {
       const newData = [
         {
@@ -521,6 +528,7 @@ export default {
   width: 100%;
   height: 100%;
   overflow: scroll;
+  transform: translateZ(0);
 }
 .data-view{
   width: 100%;

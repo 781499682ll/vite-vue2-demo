@@ -8,7 +8,9 @@ import VueEcharts from '@/utils/use_vueEcharts'
 import * as echarts from 'echarts'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+import $axios from '@/http/interface.js'
 Vue.prototype.$echarts = echarts
+Vue.prototype.$axios = $axios
 Vue.use(dataV)
 Vue.use(VueEcharts)
 Vue.use(ElementUI)
